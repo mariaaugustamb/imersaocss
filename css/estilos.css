@@ -1,0 +1,49 @@
+/*
+#baffff - tifannt claro
+class or id?
+  quando usa classe no css bota .nomeDaClasse e altera todos os elementos da classe, quando usar id, usa o #nomeDoId e so altera o elemento que esta com o id, ou seja, so deve existir um elemento na pagina interia com aquele id.
+
+*/
+
+body{
+  background-image: url("https://i.pinimg.com/originals/e4/1e/94/e41e94f53b51eabcf67af63019a67863.jpg");
+  background-size: auto 100vh; /*100% viewport height - tamanho da tela*/
+  font-family: helvetica;
+  height: 100vh;
+}
+
+.menu{
+  background-color: white;
+}
+
+.menu ul{
+  display: flex; /*exibe os elementos lado a lado*/
+  justify-content: space-around; /*separa os elementos que ficam grudados apos o uso do display flex(so funciona com o uso desse display) space-between so bota espaco nas do meio. ja space-around coloca em todos*/
+}
+
+/*todos os elementos lis dentro da classe menu terao essas caracteristicas*/
+.menu li{
+  list-style: none;
+}
+
+a{
+  color: teal;
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+/*poderia fazer .site-title, .site-subtitle{}, ja que as prorpiedades sao iguais. ainda poderia declara .site-subtitle{} e fazer coisas diferentes nele*/
+.site-title{
+  color: black;
+  text-align: center;
+}
+
+.site-subtitle{
+  color: black;
+  text-align: center;
+  font-style: italic;
+}
+
