@@ -19,32 +19,30 @@ body {
   background-image: linear-gradient(to bottom right, white, #36d6d6);
   background-position: center;
   background-size: 100vw 100vh; /*100% viewport height - tamanho da tela */
-  font-family: 'Source Serif Pro', serif;
+  font-family: "Source Serif Pro", serif;
   font-size: 12px;
   height: 100vh;
 }
 
 /*se a tela tiver pelo menos 400px carregara esses estilos*/
-@media(min-width: 400px){
-  body{
+@media (min-width: 400px) {
+  body {
     font-size: 14px;
   }
 }
 
-@media(min-width: 600px){
-  body{
+@media (min-width: 600px) {
+  body {
     font-size: 18px;
   }
 }
 
-header{
+header {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center; /*centralizar(os dois ultimos*/
 }
-
-
 
 .menu {
   background-color: #36d6d6;
@@ -64,15 +62,15 @@ header{
   list-style: none;
 }
 
-.menu a{
+.menu a {
   display: block; /*transforma em um quadrado que quebra texto. o padrao do a é display inline*/
-  font-family: 'Balsamiq Sans', cursive;
+  font-family: "Balsamiq Sans", cursive;
   padding: 10px 20px;
   background-color: #36d6d6;
   transition: background-color 1s, color 1s;
 }
 
-.menu a:hover{
+.menu a:hover {
   background-color: #1cafaf;
   color: white;
 }
@@ -85,27 +83,48 @@ a {
 a:hover {
   text-decoration: underline;
 }
+ 
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  border-top-color: #000;
+  animation: spinner .6s linear infinite;
+}
 
-.titles{
+@keyframes spinner {
+  from{transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+ 
+.titles {
   transform: scale(0.2) translate(0 50vh);
   opacity: 0;
 
   animation: linear 1.5s animacaoTitulo forwards; /*fowards mantem no ultimo estado da animacao!*/
 }
 
-@keyframes animacaoTitulo{
-  100%{
+@keyframes animacaoTitulo {
+  100% {
     transform: scale(1) translate(0);
-  opacity: 01;
+    opacity: 01;
   }
 }
 
 /*poderia fazer .site-title, .site-subtitle{}, ja que as prorpiedades sao iguais. ainda poderia declara .site-subtitle{} e fazer coisas diferentes nele*/
 .site-title {
   color: black;
-  font-family: 'Amatic SC', cursive;
-  font-weight: 900; 
-  text-align: center; 
+  font-family: "Amatic SC", cursive;
+  font-weight: 900;
+  text-align: center;
   font-size: 2.5em; /*x * tamanho do body*/
 }
 
@@ -113,39 +132,38 @@ a:hover {
   color: black;
   text-align: center;
   font-style: italic;
-  font-family: 'Josefin Sans', sans-serif;
- 
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .contato,
-.portfolio{
+.portfolio {
   padding: 2em;
   min-height: 100vh; /*ter pelo menos essa altura*/
 }
 
 .contato h2,
-.portfolio h2{
-  font-family: 'Josefin Sans', sans-serif;
+.portfolio h2 {
+  font-family: "Josefin Sans", sans-serif;
   margin-bottom: 2em;
   font-size: 2em;
   /*text-align: center;*/
 }
 
-.portfolio .grid{
+.portfolio .grid {
   display: grid; /*diferentemente do flex, o grid nao forca colunas*/
   gap: 1.5em; /*quando usar grid nao usar margin, mas sim gap*/
 }
 
-@media(min-width: 560px /*ver tamanho cero na devtools
-!*/){
-  .portfolio .grid{
+@media (min-width: 560px /*ver tamanho cero na devtools
+!*/) {
+  .portfolio .grid {
     grid-template-columns: 240px 240px;
   }
 }
 
-@media(min-width: 880px /*ver tamanho cero na devtools
-!*/){
-  .portfolio .grid{
+@media (min-width: 880px /*ver tamanho cero na devtools
+!*/) {
+  .portfolio .grid {
     grid-template-columns: repeat(3, 240px);
     align-content: center;
     justify-content: center;
@@ -153,11 +171,11 @@ a:hover {
   }
 }
 
-.portfolio figure{
+.portfolio figure {
   text-align: center;
 }
 
-.img-portfolio{
+.img-portfolio {
   height: 180px;
   width: 240px;
   object-fit: cover; /*bota a imagem no espaco sem deformar*/
@@ -166,29 +184,29 @@ a:hover {
   transition: transform 0.5s;
 }
 
-.img-portfolio:hover{
+.img-portfolio:hover {
   transform: scale(1.25);
 }
 
-@media(min-width: 1200px){
-  .img-portfolio{
+@media (min-width: 1200px) {
+  .img-portfolio {
     height: auto;
     width: 100%;
   }
 }
 
-.contato .icons{
+.contato .icons {
   text-align: center;
 }
 
-.contato a{
+.contato a {
   color: black;
   font-size: 8em;
   transition: text-shadow 0.5s;
 }
 
 .contato a:active, /*quando o usuario clica, ja o hover é quando o mouse passa em cima*/
-.contato a:hover{
+.contato a:hover {
   text-decoration: none;
   text-shadow: 0 0px 10px rgba(0, 0, 0, 0.76);
 }
